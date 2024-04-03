@@ -27,12 +27,12 @@ const AlignItemsList: FC<Props> = (props: Props) => {
         flightData?.map((info: any) => {
           return (
             <>
-              <ListItem style={{ maxHeight: '50px' }} alignItems='flex-start'>
+              <ListItem style={{ maxHeight: '65px' }} alignItems='flex-start'>
                 <ListItemAvatar>
                   <Avatar
-                    alt={'S'}
+                    alt={'flight'}
                     sx={{ bgcolor: '#ab47bc', width: 32, height: 32 }}
-                    src='/static/images/avatar/2.jpg'
+                    src={require('./assets/flightAvatar.jpg')}
                   />
                 </ListItemAvatar>
                 <ListItemText
@@ -45,7 +45,7 @@ const AlignItemsList: FC<Props> = (props: Props) => {
                         cursor: 'pointer',
                       }}
                       color='primary'
-                      fontSize={'14px'}
+                      fontSize={'16px'}
                       onClick={() => {
                         navigate(`/flightDetails/${info?.id}`);
                       }}
@@ -60,61 +60,77 @@ const AlignItemsList: FC<Props> = (props: Props) => {
                         style={{
                           display: 'flex',
                           flexDirection: 'row',
-                          justifyContent: 'space-between',
+                          gap: '20px',
                         }}
                       >
-                        {' '}
-                      </div>
-                      <Typography
-                        sx={{ display: 'inline', fontWeight: 'bold' }}
-                        component='span'
-                        variant='body2'
-                        color='text.primary'
-                      >
-                        {`Airline : ${info?.airline}`}
-                      </Typography>
+                        <Typography
+                          sx={{
+                            display: 'inline',
+                            fontWeight: 'bold',
+                            fontSize: '14px',
+                          }}
+                          component='span'
+                          variant='body2'
+                          color='text.primary'
+                        >
+                          {`Airline : ${info?.airline}`}
+                        </Typography>
+                        <Typography
+                          sx={{ display: 'inline', fontWeight: 'normal' }}
+                          component='span'
+                          variant='body2'
+                          color='text.primary'
+                        >
+                          {`Origin : ${info?.origin}`}
+                        </Typography>
+                        <Typography
+                          sx={{ display: 'inline', fontWeight: 'normal' }}
+                          component='span'
+                          variant='body2'
+                          color='text.primary'
+                        >
+                          {`Destination : ${info?.destination}`}
+                        </Typography>
+                        <Typography
+                          sx={{ display: 'inline', fontWeight: 'normal' }}
+                          component='span'
+                          variant='body2'
+                          color='text.primary'
+                        >
+                          {`Departure : ${new Date(
+                            info?.departureTime
+                          ).toDateString()}`}
+                        </Typography>
+                        <Typography
+                          sx={{ display: 'inline', fontWeight: 'normal' }}
+                          component='span'
+                          variant='body2'
+                          color='text.primary'
+                        >
+                          <Typography
+                            sx={{
+                              display: 'inline',
+                              position: 'relative',
+                              top: '-8px',
+                              marginRight: '8px',
+                            }}
+                            component='span'
+                            variant='body2'
+                            color='text.primary'
+                          >
+                            {' '}
+                            {`Status : ${info?.status}`}
+                          </Typography>
 
-                      <Typography
-                        sx={{ display: 'inline', fontWeight: 'normal' }}
-                        component='span'
-                        variant='body2'
-                        color='text.primary'
-                      >
-                        {`Origin : ${info?.origin}`}
-                      </Typography>
-                      <Typography
-                        sx={{ display: 'inline', fontWeight: 'normal' }}
-                        component='span'
-                        variant='body2'
-                        color='text.primary'
-                      >
-                        {`Destination : ${info?.destination}`}
-                      </Typography>
-                      <Typography
-                        sx={{ display: 'inline', fontWeight: 'normal' }}
-                        component='span'
-                        variant='body2'
-                        color='text.primary'
-                      >
-                        {`Departure : ${new Date(
-                          info?.departureTime
-                        ).toDateString()}`}
-                      </Typography>
-                      <Typography
-                        sx={{ display: 'inline', fontWeight: 'normal' }}
-                        component='span'
-                        variant='body2'
-                        color='text.primary'
-                      >
-                        {`Status : ${info?.status}`}
-                        {info?.status === 'On Time' ? (
-                          <CheckCircle style={{ color: '#4caf50' }} />
-                        ) : info?.status === 'Boarding' ? (
-                          <Hail style={{ color: '#7b1fa2' }} />
-                        ) : (
-                          <Announcement style={{ color: '#d32f2f' }} />
-                        )}
-                      </Typography>
+                          {info?.status === 'On Time' ? (
+                            <CheckCircle style={{ color: '#4caf50' }} />
+                          ) : info?.status === 'Boarding' ? (
+                            <Hail style={{ color: '#7b1fa2' }} />
+                          ) : (
+                            <Announcement style={{ color: '#d32f2f' }} />
+                          )}
+                        </Typography>{' '}
+                      </div>
                     </React.Fragment>
                   }
                 />
