@@ -1,7 +1,6 @@
 import { Alert, CircularProgress, Typography } from '@mui/material';
 import React, { FC, useEffect, useState } from 'react';
 import AlignItemsList from './TabularList';
-import SearchAppBar from './Topbar';
 
 interface Props {
   data?: any;
@@ -61,8 +60,6 @@ const FlightBooking: FC<Props> = (props: Props) => {
 
   return (
     <div className='App'>
-      <SearchAppBar />
-
       {error && <Alert severity='error'>{'Api Error has occured'}</Alert>}
 
       <Typography

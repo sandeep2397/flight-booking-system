@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React, { Suspense } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
+import SearchAppBar from './Topbar';
 // import FlightBooking from './FlightBooking';
 const FlightBooking = React.lazy(() => import('./FlightBooking'));
 const FlightBookingDetails = React.lazy(() => import('./FlightDetails'));
@@ -61,6 +62,7 @@ function App() {
             path='/'
             element={
               <Suspense fallback={<div>Loading...</div>}>
+                <SearchAppBar />
                 <FlightBooking />{' '}
               </Suspense>
             }
@@ -69,7 +71,7 @@ function App() {
             path='/flights'
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                {' '}
+                <SearchAppBar />
                 <FlightBooking />{' '}
               </Suspense>
             }
