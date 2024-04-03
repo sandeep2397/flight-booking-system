@@ -8,7 +8,7 @@ Flight booking system deployed with Vercel.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
 
-_Live Example: [https://create-react-template.vercel.app/](https://flight-booking-system-git-main-sandeep2397s-projects.vercel.app/)_
+_Live Example: https://flight-booking-system-git-main-sandeep2397s-projects.vercel.app_
 
 ## Available Scripts
 
