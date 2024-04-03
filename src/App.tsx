@@ -80,7 +80,7 @@ function App() {
             path='/flightDetails/:id'
             element={
               <Suspense fallback={<div>Loading...</div>}>
-                {' '}
+                <SearchAppBar />
                 <FlightBookingDetails />{' '}
               </Suspense>
             }
