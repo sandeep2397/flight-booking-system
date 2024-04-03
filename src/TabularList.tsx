@@ -1,4 +1,9 @@
-import { Announcement, CheckCircle, Hail } from '@mui/icons-material';
+import {
+  Announcement,
+  CheckCircle,
+  FlightTakeoff,
+  Hail,
+} from '@mui/icons-material';
 import { Link } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
@@ -126,6 +131,8 @@ const AlignItemsList: FC<Props> = (props: Props) => {
                             <CheckCircle style={{ color: '#4caf50' }} />
                           ) : info?.status === 'Boarding' ? (
                             <Hail style={{ color: '#7b1fa2' }} />
+                          ) : info?.status === 'Departed' ? (
+                            <FlightTakeoff style={{ color: '#00e5ff' }} />
                           ) : (
                             <Announcement style={{ color: '#d32f2f' }} />
                           )}

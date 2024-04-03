@@ -1,4 +1,9 @@
-import { Announcement, CheckCircle, Hail } from '@mui/icons-material';
+import {
+  Announcement,
+  CheckCircle,
+  FlightTakeoff,
+  Hail,
+} from '@mui/icons-material';
 import { Alert, CircularProgress } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -117,6 +122,8 @@ const FlightBookingDetails: React.FC<Props> = (props: Props) => {
                 <CheckCircle style={{ color: '#4caf50' }} />
               ) : flightDetails?.status === 'Boarding' ? (
                 <Hail style={{ color: '#7b1fa2' }} />
+              ) : flightDetails?.status === 'Departed' ? (
+                <FlightTakeoff style={{ color: '#00e5ff' }} />
               ) : (
                 <Announcement style={{ color: '#d32f2f' }} />
               )}
